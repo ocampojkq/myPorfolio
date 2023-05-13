@@ -26,7 +26,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
- 
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -35,12 +34,15 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+<script src="index.js"></script>
 
   <script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
 <script type="text/javascript">
-  emailjs.init('foGBTuJfGjdrum6EI')
+   (function(){
+      emailjs.init("WN7qQyGWf7JPFttCx");
+   })();
 </script>
 </head>
 
@@ -55,7 +57,7 @@
 
       <div class="profile">
         <img src="assets/img/IMG_20230512_111714.png" alt="" class="img-fluid rounded-circle">
-        <!-- <h1 class="text-light"><a href="index.html">Jesse Kit Ocampo</a></h1> -->
+        <h1 class="text-light"><a href="index.html">Jesse Kit Ocampo</a></h1>
         <div class="social-links mt-3 text-center">
          
           <a href="mailto:ocampojessekit1@gmail.com" class="instagram" target="_blank"><i class="bi bi-envelope"></i></a>
@@ -84,8 +86,8 @@
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1>Jesse Kit Ocampo</h1>
-      <p><span class="typed" data-typed-items="Front End Web Developer"></span></p>
-      <a href="https://drive.google.com/u/0/uc?id=161H2K1tL0cI7lNCZ4Gn1Pz_XM4sR00Ox&export=download"><button class="btn btn-warning me-5" onclick="downloadFile()" >Download my CV</button></a>
+      <p>I'm <span class="typed" data-typed-items="Front End Developer"></span></p>
+      <a href="https://drive.google.com/u/0/uc?id=161H2K1tL0cI7lNCZ4Gn1Pz_XM4sR00Ox&export=download"><button class="btn btn-warning me-5" onclick="downloadFile()">Download my CV</button></a>
       
 
     </div>
@@ -310,8 +312,7 @@
               </div>
 
               <div class="email">
-                <a href="mailto:ocampojessekit1@gmail.com" class="instagram" target="_blank"><i class="bi bi-envelope"></i></a>
-                
+                <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
                 <p>ocampojessekit1@gmail.com</p>
               </div>
@@ -322,84 +323,45 @@
                 <p>09763991986</p>
               </div>
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1249.8052483896108!2d125.33910023872694!3d6.741667534105855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f9b142753ed137%3A0x14ef4118acb429a3!2sQueensborough%20Inn!5e1!3m2!1sen!2sph!4v1683860188623!5m2!1sen!2sph" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1249.8052483896108!2d125.33910023872694!3d6.741667534105855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32f9b142753ed137%3A0x14ef4118acb429a3!2sQueensborough%20Inn!5e1!3m2!1sen!2sph!4v1683860188623!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form id="form" class="php-email-form">
+            <form id="contact-form" action="/submit-form" method="POST" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group col-md-6">
-                 
-              
-              <label for="from_name">Your Name</label>
-              <input type="text" name="from_name" id="from_name" class="form-control">
-
-
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="to_name">Your Email</label>
-                 
-                  <input type="text" name="to_name" id="to_name" class="form-control">
+                  <label for="email">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
                 </div>
               </div>
               <div class="form-group">
-               
-                <label for="reply_to">Subject</label>
-                <input type="text" name="reply_to" id="reply_to" class="form-control">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
               </div>
               <div class="form-group">
-                <label for="message">message</label>
-               
-               
-                <textarea class="form-control" type="text" name="message" id="message" rows="10" required></textarea>
+                <label for="message">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
               </div>
-            
-
-              <!-- <div class="my-3">
+              <div class="my-3">
                 <div class="loading">Loading</div>
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>  -->
-             
-               <input type="submit" id="button" value="Send Email" >
+              </div>
+              <div class="text-center"><button type="submit" onclick="sendEmail()">Send Message</button></div>
             </form>
           </div>
+          
 
-          <!-- <form id="form">
-            <div class="field">
-              <label for="from_name">Your Name</label>
-              <input type="text" name="from_name" id="from_name">
-            </div>
-            <div class="field">
-              <label for="to_name">Your Email</label>
-              <input type="text" name="to_name" id="to_name">
-            </div>
-           
-            <div class="field">
-              <label for="reply_to">Subject</label>
-              <input type="text" name="reply_to" id="reply_to">
-            </div>
-             <div class="field">
-              <label for="message">message</label>
-              <input type="text" name="message" id="message">
-            </div>
-          
-            <input type="submit" id="button" value="Send Email" >
-          </form> -->
-          
-          <script type="text/javascript"
-            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-          
-          <script type="text/javascript">
-            emailjs.init('foGBTuJfGjdrum6EI')
-          </script>
         </div>
 
       </div>
     </section><!-- End Contact Section -->
-
 
   </main><!-- End #main -->
 
@@ -457,13 +419,7 @@
     }
     </script>
 
-
-
-
-
-
-
-
+    <script src="index.js"></script>
 </body>
 
 </html>

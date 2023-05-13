@@ -1,21 +1,21 @@
-// const btn = document.getElementById("button");
+function sendEmail() {
+  const form = document.getElementById("contact-form");
+  const btn = form.querySelector("button[type=submit]");
 
-// document.getElementById("form").addEventListener("submit", function (event) {
-//   event.preventDefault();
+  btn.innerHTML = "Sending...";
 
-//   btn.value = "Sending...";
+  const serviceID = "service_k3qz6ir";
+  const templateID = "template_4uj5qua";
 
-//   const serviceID = "default_service";
-//   const templateID = "template_4uj5qua";
-
-//   emailjs.sendForm(serviceID, templateID, this).then(
-//     () => {
-//       btn.value = "Send Email";
-//       alert("Sent!");
-//     },
-//     (err) => {
-//       btn.value = "Send Email";
-//       alert(JSON.stringify(err));
-//     }
-//   );
-// });
+  emailjs.sendForm(serviceID, templateID, form).then(
+    () => {
+      btn.innerHTML = "Send Message";
+      form.reset();
+      alert("Your message has been sent!");
+    },
+    (err) => {
+      btn.innerHTML = "Send Message";
+      alert(JSON.stringify(err));
+    }
+  );
+}
