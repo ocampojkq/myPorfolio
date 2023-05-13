@@ -1,3 +1,4 @@
+// have alert message
 function sendEmail() {
   const form = document.getElementById("contact-form");
   const btn = form.querySelector("button[type=submit]");
@@ -19,3 +20,5 @@ function sendEmail() {
     }
   );
 }
+
+// have alert message
