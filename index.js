@@ -1,21 +1,21 @@
-function sendEmail() {
-  var params = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    subject: document.getElementById("subject").value,
-  };
+// const btn = document.getElementById("button");
 
-  const serviceID = "service_k3qz6ir";
-  const templateID = "template_4uj5qua";
+// document.getElementById("form").addEventListener("submit", function (event) {
+//   event.preventDefault();
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then((res) => {
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("subject").value = "";
-      console.log(res);
-      alert("nice");
-    })
-    .catch((err) => console.log(err));
-}
+//   btn.value = "Sending...";
+
+//   const serviceID = "default_service";
+//   const templateID = "template_4uj5qua";
+
+//   emailjs.sendForm(serviceID, templateID, this).then(
+//     () => {
+//       btn.value = "Send Email";
+//       alert("Sent!");
+//     },
+//     (err) => {
+//       btn.value = "Send Email";
+//       alert(JSON.stringify(err));
+//     }
+//   );
+// });
