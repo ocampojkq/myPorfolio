@@ -1098,7 +1098,7 @@ section {
 /* rain drops */
 
 
-.raindrop {
+/* .raindrop {
   position: fixed;
   top: -20px;
   left: 0;
@@ -1115,4 +1115,4 @@ section {
   100% {
     transform: translateY(100vh);
   }
-}
+} */
