@@ -272,6 +272,8 @@ h6 {
   border-bottom: 3px solid #055380;
 }
 
+
+
 @media (min-width: 1024px) {
   #hero {
     background-attachment: fixed;
@@ -451,9 +453,36 @@ section {
   width: 1px;
   height: 10px;
   transition: 0.9s;
-  background-color: #055380;
+ 
+}
+.html{
+  background-color: #f06529;
+}
+.css{
+  background-color: #2965f1;;
+}
+.js{
+  background-color: #F0DB4F;;
+}
+.php{
+  background-color: #777BB3;;
+}
+.bootstrap{
+  background-color: #5a23c8;;
+}
+.react{
+  background-color: #61DBFB;;
+}
+.node{
+  background-color: #68A063;;
+}
+.laravel{
+  background-color: #F05340;;
 }
 
+.fa-chrome{
+color: #055380;
+}
 /*--------------------------------------------------------------
 # Resume
 --------------------------------------------------------------*/
